@@ -1,4 +1,4 @@
-// WITH_RUNTIME
+// WITH_STDLIB
 // USE_EXPERIMENTAL: kotlin.ExperimentalStdlibApi
 // TARGET_BACKEND: JVM_IR
 

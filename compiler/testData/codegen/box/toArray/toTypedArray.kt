@@ -5,7 +5,7 @@
 // IGNORE_BACKEND: JS
 // missing isArrayOf on JS
 
-// WITH_RUNTIME
+// WITH_STDLIB
 
 fun box(): String {
     val array = listOf(2, 3, 9).toTypedArray()
