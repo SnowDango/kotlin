@@ -20,7 +20,6 @@ import org.jetbrains.kotlin.ir.symbols.IrSimpleFunctionSymbol
 import org.jetbrains.kotlin.ir.symbols.IrSymbol
 import org.jetbrains.kotlin.ir.types.classifierOrFail
 import org.jetbrains.kotlin.ir.util.getInlineClassBackingField
-import org.jetbrains.kotlin.ir.util.render
 import org.jetbrains.kotlin.js.backend.ast.*
 
 typealias IrCallTransformer = (IrCall, context: JsGenerationContext) -> JsExpression
@@ -98,8 +97,7 @@ class JsIntrinsicTransformers(backendContext: JsIrBackendContext) {
                 typeArgument?.getClassRef(context)
                     ?: compilationException(
                         "Type argument of jsClass must be statically known class",
-                        typeArgument,
-                        context.currentFile
+                        typeArgument
                     )
             }
 
@@ -128,8 +126,7 @@ class JsIntrinsicTransformers(backendContext: JsIrBackendContext) {
             addIfNotNull(intrinsics.jsCode) { call, context ->
                 compilationException(
                     "Should not be called",
-                    call,
-                    context.currentFile
+                    call
                 )
             }
 
